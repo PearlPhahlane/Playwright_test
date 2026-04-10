@@ -13,7 +13,7 @@ test('user can login with valid credentials', async ({page}) => {
     await expect(page).toHaveURL(/inventory/);
 });
 
-//invalid login test
+//invalid login test that will fail
 test.fail('user cannot login with invalid credentials', async({page}) =>{
     await page.goto('https://www.saucedemo.com/');
 
