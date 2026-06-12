@@ -1,8 +1,8 @@
 class LoginPage {
     constructor(page) {
         this.page = page;
-        this.usernameInput = page.locator('[data-test="username]');
-        this.passwordInput = page.locator('[data-tesr="password"]');
+        this.usernameInput = page.locator('[data-test="username"]');
+        this.passwordInput = page.locator('[data-test="password"]');
         this.loginButton = page.locator('[data-test="login-button"]');
         this.errorMessage = page.locator('[data-test="error"]');
 
@@ -17,6 +17,11 @@ class LoginPage {
         await this.passwordInput.fill(password);
         await this.loginButton.click();
 
+    }
+
+    async getErrorMessage() {
+        return await this.errorMessage.textContent();
+        
     }
 }
 module.exports = { LoginPage };
